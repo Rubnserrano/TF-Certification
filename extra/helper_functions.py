@@ -59,8 +59,8 @@ def load_and_prep_image(filename, img_shape=224, scale=True):
               size=text_size)
          
 
-    if savefig:
-      fig.savefig('confusion_matrix.png')
+  if savefig:
+    fig.savefig("confusion_matrix.png")
       
 def pred_and_plot(model, filename, class_names):
   img = load_and_prep_image(filename)
