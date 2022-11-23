@@ -52,11 +52,12 @@ def load_and_prep_image(filename, img_shape=224, scale=True):
                  horizontalalignment = 'center',
                  color = 'white' if cm[i,j] > threshold else 'black',
                  size = text_size)
-        else:
-          plt.text(j,i,f"{cm[i,j]}",
+      else:
+         plt.text(j,i,f"{cm[i,j]}",
                    horizozntalalignment = 'center',
                    color = 'white' if cm[i,j] > threshold else 'black',
                    size = text_size)
+         
 
     if savefig:
       fig.savefig('confusion_matrix.png')
