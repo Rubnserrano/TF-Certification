@@ -47,16 +47,16 @@ def load_and_prep_image(filename, img_shape=224, scale=True):
     threshold = (cm.max() + cm.min()) / 2.
     
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-      if norm:
-        plt.text(j,i, f"{cm[i,j]} ({cm_norm[i,j]*100:.1f}%)",
-                 horizontalalignment = 'center',
-                 color = 'white' if cm[i,j] > threshold else 'black',
-                 size = text_size)
-      else:
-         plt.text(j,i,f"{cm[i,j]}",
-                   horizozntalalignment = 'center',
-                   color = 'white' if cm[i,j] > threshold else 'black',
-                   size = text_size)
+    if norm:
+      plt.text(j, i, f"{cm[i, j]} ({cm_norm[i, j]*100:.1f}%)",
+              horizontalalignment="center",
+              color="white" if cm[i, j] > threshold else "black",
+              size=text_size)
+    else:
+      plt.text(j, i, f"{cm[i, j]}",
+              horizontalalignment="center",
+              color="white" if cm[i, j] > threshold else "black",
+              size=text_size)
          
 
     if savefig:
